@@ -1,0 +1,216 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1057{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs28\lang33 PSR 1 : Ikhtisar\fs22\par
+\b0 File hanya \b HARUS\b0  menggunakan  <? Php dan <tag? =.\par
+File \b HARUS\b0  menggunakan hanya UTF-8 tanpa BOM untuk kode PHP.\par
+File \b HARUS\b0  baik menyatakan simbol (kelas, fungsi, konstanta, dll) atau menyebabkan efek samping (misalnya menghasilkan output, mengubah pengaturan .ini, dll) tapi \b TIDAK HARUS \b0 melakukan keduanya.\par
+Ruang nama dan kelas \b HARUS\b0  mengikuti PSR-0.\par
+nama kelas \b HARUS\b0  dinyatakan di StudlyCaps.\par
+konstanta kelas \b HARUS\b0  dinyatakan dalam huruf besar semua dengan pemisah garis bawah.\par
+nama metode \b HARUS\b0  dinyatakan di CamelCase. \par
+\b\fs28 PSR 2 : Ikhtisar (Overview)\b0\par
+\fs22 Kode \b HARUS\b0  mengikuti PSR-1.\par
+Kode \b HARUS\b0  menggunakan 4 ruang untuk memasukkan, bukan label.\par
+\b TIDAK HARUS \b0 batas keras pada panjang garis; batas lembut HARUS 120 karakter; garis HARUS 80 karakter atau kurang.\par
+\b HARUS\b0  ada satu baris kosong setelah deklarasi namespace, dan \b HARUS\b0  ada satu baris kosong setelah blok penggunaan deklarasi.\par
+Tanda kurung membuka untuk Class \b HARUS\b0  berada pada baris berikutnya, dan kurung penutup  \b HARUS\b0  berada pada baris berikutnya setelah Body.\par
+Tanda kurung membuka untuk Method \b HARUS\b0  berada pada baris berikutnya, dan menutup kurung penutup \b HARUS\b0  pergi pada baris berikutnya setelah Body.\par
+Visibilitas \b HARUS\b0  dideklarasikan pada semua properti dan Method; abstrak dan akhir \b HARUS\b0  dideklarasikan sebelum visibilitas; statis \b HARUS\b0  dinyatakan setelah visibilitas.\par
+kata kunci struktur keywords \b HARUS\b0  memiliki satu ruang setelah mereka; Method dan fungsi panggilan \b TIDAK HARUS \b0 .\par
+Tanda kurung membuka untuk struktur kontrol \b HARUS\b0  ada pada baris yang sama, dan  kurung penutup \b HARUS\b0  ada pada baris berikutnya setelah tubuh.\par
+kurung pembuka untuk struktur kontrol \b TIDAK HARUS \b0 memiliki spasi setelah mereka, dan menutup kurung untuk struktur kontrol \b TIDAK HARUS \b0 memiliki spasi sebelum. \par
+\b\fs28 PSR 2 : Contol Structur\b0\fs22\par
+\b HARUS\b0  ada satu spasi setelah kata kunci struktur pengendalian\par
+\b TIDAK HARUS \b0 ada spasi setelah kurung buka\par
+\b TIDAK HARUS \b0 ada spasi sebelum kurung tutup\par
+\b HARUS\b0   ada satu ruang antara kurung tutup dan brace pembukaan\par
+Struktur Body \b HARUS\b0  menjorok sekali\par
+Kurung penutup \b HARUS \b0 berada di baris berikutnya setelah Body\par
+Tubuh setiap struktur \b HARUS\b0  tertutup oleh kurung penutup.\par
+Kata kunci elseif \b HARUS\b0  digunakan sebagai ganti dari else if.\par
+\b contoh :\b0\par
+ <?php\par
+ if ( $expr1 ) \{ \par
+// if body\par
+ \} elseif ( $expr2 ) \{\par
+ // elseif body \par
+\} else \{\par
+ // else body;\par
+ \} \par
+Sebuah switch struktur terlihat seperti berikut ini. Perhatikan penempatan kurung, spasi, dan Kurung kurawal.  pernyataan case  \b HARUS\b0  menjorok sekali dari switch , dan break kata kunci (keyword atau terminating lainnya) \b HARUS\b0  menjorok pada tingkat yang sama dengan case Body. \b HARUS \b0 ada komentar seperti \i // no break\i0  ketika gagal disengaja dalam non-kosong case Body.\par
+\b Contoh :\par
+a. switch case\b0\par
+<?php\par
+switch ($expr) \{\par
+    case 0:\par
+        echo 'First case, with a break';\par
+        break;\par
+    case 1:\par
+        echo 'Second case, which falls through';\par
+        // no break\par
+    case 2:\par
+    case 3:\par
+    case 4:\par
+        echo 'Third case, return instead of break';\par
+        return;\par
+    default:\par
+        echo 'Default case';\par
+        break;\par
+\}\par
+\b b. While, do while\b0\par
+<?php\par
+while ($expr) \{\par
+    // structure body\par
+\}\par
+?>\par
+<?php\par
+do \{\par
+    // structure body;\par
+\} while ($expr);\par
+?>\par
+\b c.  For\b0\par
+<?php\par
+for ($i = 0; $i < 10; $i++) \{\par
+    // for body\par
+\}\par
+\b d. Foreach\b0\par
+<?php\par
+foreach ($iterable as $key => $value) \{\par
+    // foreach body\par
+\}\par
+?>\par
+\b e. try, catch\b0\par
+<?php\par
+try \{\par
+    // try body\par
+\} catch (FirstExceptionType $e) \{\par
+    // catch body\par
+\} catch (OtherExceptionType $e) \{\par
+    // catch body\par
+\}\par
+?>\par
+Pernyataan(CASE) kasus \b HARUS\b0  menjorok sekali dari switch, dan BREAK (keyword atau terminating lainnya) \b HARUS\b0  menjorok pada tingkat yang sama seperti CASE kasus.\par
+Ada HARUS komentar seperti // tidak ada BREAK ketika jatuh-melalui disengaja dalam Body CASE non-kosong. \par
+\b\fs28 PSR 2 : General\b0\fs22\par
+Kode \b HARUS\b0  mengikuti semua aturan yang digariskan dalam PSR-1.\par
+Semua file PHP \b HARUS\b0  menggunakan Unix LF (ganti baris) akhir baris.\par
+Semua file PHP \b HARUS\b0  diakhiri dengan satu baris kosong .\par
+Tag penutup ?> \b HARUS\b0  dihilangkan dari file yang hanya berisi PHP.\par
+\b TIDAK HARUS \b0 ada  batas  pada panjang garis.\par
+Batas lembut pada panjang garis \b HARUS\b0  120 karakter; pemeriksa otomatis \b HARUS \b0 memperingatkan tapi \b TIDAK HARUS \b0 salah pada batas lembut.\par
+Garis \b TIDAK HARUS \b0 lebih dari 80 karakter; garis selanjutnya \b HARUS\b0  dibagi menjadi beberapa baris berikutnya agar tidak lebih dari 80 karakter masing-masing.\par
+\b TIDAK HARUS \b0 ada\b  \b0 spasi di akhir baris non-kosong.\par
+baris kosong \b MUNGKIN\b0  ditambahkan untuk meningkatkan perhatian dan untuk menunjukkan blok terkait kode.\par
+\b TIDAK HARUS \b0 ada\b  \b0 lebih dari satu pernyataan per baris.\par
+Kode \b HARUS\b0  menggunakan indent dari 4 ruang, dan \b TIDAK HARUS \b0 menggunakan tab untuk memasukkan.\par
+kata kunci PHP \b HARUS\b0  dalam huruf kecil.\par
+PHP konstanta benar, salah, dan nol \b HARUS\b0  dalam huruf kecil. \par
+\b\fs28 PSR 2 : Ruang Nama dan Penggunaan Dekarasi\par
+\b0\fs22 Ketika memulai, \b HARUS\b0  ada satu baris kosong setelah deklarasi namespace.\par
+Ketika memulai, semua deklarasi penggunaan \b HARUS\b0 ada setelah deklarasi namespace.\par
+\b HARUS \b0 ada satu penggunaan kata kunci per deklarasi.\par
+\b HARUS \b0 ada\b  \b0 satu baris kosong setelah blok digunakan. \par
+\b Contoh :\b0\par
+<?php \par
+namespace Vendor\\Package ; \par
+use FooClass ; \par
+use BarClass as Bar ; \par
+use OtherVendor\\OtherPackage\\BazClass ; \par
+// ... additional PHP code ... \par
+?>\par
+\b\fs28 PSR 2 : class,properties,metode\b0\fs22\par
+Extends dan Implements HARUS dideklarasikan pada baris yang sama dengan nama Class.\par
+Tanda kurung pembuka untuk Class \b HARUS \b0 berada pada baris sendiri; kurung penutup untuk Class \b HARUS\b0  berada pada baris berikutnya setelah Body.\par
+\b contoh :\b0\par
+<?php \par
+namespace Vendor\\Package ; \par
+use FooClass ; \par
+use BarClass as Bar ; \par
+use OtherVendor\\OtherPackage\\BazClass ;\par
+ class ClassName extends ParentClass implements \\ArrayAccess , \\Countable \{\par
+ // constants, properties, methods \par
+\}\par
+Daftar Implement \b MUNGKIN\b0  dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar \b HARUS \b0 di baris berikutnya, dan ada \b HARUS \b0 hanya satu Interface per baris.\par
+\b contoh :\b0\par
+<?php \par
+namespace Vendor\\Package ; \par
+use FooClass ; \par
+use BarClass as Bar ; \par
+use OtherVendor\\OtherPackage\\BazClass ; \par
+class ClassName extends ParentClass implements \\ArrayAccess , \\Countable , \\Serializable \{ \par
+// constants, properties, methods\par
+ \}\par
+Visibilitas HARUS dideklarasikan pada semua properti.\par
+\b Contoh Deklarasi properti :\b0\par
+<?php \par
+namespace Vendor\\Package ; \par
+class ClassName \{ \par
+public $foo = null ; \par
+\} \par
+kata kunci variabel \b TIDAK HARUS\b0  digunakan untuk menyatakan sebuah properti.\par
+TIDAK HARUS ada lebih dari satu properti dinyatakan per pernyataan.\par
+nama properti \b TIDAK BOLEH\b0  diawali dengan garis bawah untuk mengindikasikan dilindungi atau visibilitas pribadi, ex (_Program).\par
+Visibilitas \b HARUS\b0  dideklarasikan pada semua method.\par
+nama method \b TIDAK BOLEH \b0 diawali dengan satu garis bawah untuk mengindikasikan dilindungi atau visibilitas pribadi.\par
+nama method \b TIDAK HARUS \b0 dideklarasikan dengan spasi setelah nama method.\par
+\b Contoh :\par
+ \b0 <?php \par
+namespace Vendor\\Package ;\par
+ class ClassName \{ \par
+public function fooBarBaz ( $arg1 , & $arg2 , $arg3 = []) \{\par
+ // method body \par
+\}\par
+ \} \par
+Tanda kurung buka pada method \b HARUS\b0  berada pada baris tersendiri, dan kurung penutup \b HARUS\b0  berada pada baris berikutnya Body.\par
+\b TIDAK HARUS\b0  ada spasi setelah kurung buka dari metode, dan \b TIDAK\b0  \b HARUS \b0 ada spasi sebelum tanda kurung tutup.\par
+Dalam daftar argumen,  \b TIDAK HARUS\b0  ada spasi sebelum setiap koma, dan \b HARUS\b0  ada satu ruang setelah setiap koma.\par
+\b Contoh :\b0\par
+<?php \par
+namespace Vendor\\Package ; \par
+class ClassName \{\par
+ public function foo ( $arg1 , & $arg2 , $arg3 = []) \{\par
+ // method body \par
+\}\par
+\}\par
+Metode argumen dengan nilai default \b HARUS\b0  ada pada akhir daftar argumen.\par
+daftar argumen \b MUNGKIN\b0  dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar \b HARUS\b0  di baris berikutnya, dan yang \b HARUS\b0  ada hanya satu argumen per baris.\par
+Ketika daftar argumen dibagi di beberapa baris, kurung tutup dan membuka brace harus ditempatkan bersama-sama pada jalur sendiri dengan satu ruang antara mereka.\par
+\b contoh :\b0\par
+ <?php \par
+namespace Vendor\\Package ;\par
+ class ClassName \{ \par
+public function aVeryLongMethodName ( ClassTypeHint $arg1 , & $arg2 , array $arg3 = [] ) \{ \par
+// method body \par
+\}\par
+\}\par
+Ketika memulai, deklarasi abstrak dan akhir harus mendahului deklarasi visibilitas.\par
+Ketika memulai, deklarasi statis \b HARUS\b0  datang setelah deklarasi visibilitas.\par
+contoh : \par
+<?php \par
+namespace Vendor\\Package ; \par
+abstract class ClassName \{ protected static $foo ; \par
+abstract protected function zim (); final public static function bar () \{\par
+ // method body \par
+\} \par
+\}\par
+Ketika membuat sebuah metode atau fungsi panggilan,\b  TIDAK HARUS\b0  ada ruang antara method atau nama fungsi dan kurung buka, \b TIDAK HARUS\b0  ada spasi setelah kurung buka, dan \b TIDAK HARUS\b0  ada spasi sebelum tanda kurung tutup.\par
+Dalam daftar argumen,  \b TIDAK HARUS\b0  ada spasi sebelum setiap koma, dan \b HARUS\b0  ada satu ruang setelah setiap koma. \par
+\b contoh : \b0\par
+ <?php \par
+bar (); $foo -> bar ( $arg1 ); \par
+Foo :: bar ( $arg2 , $arg3 ); \par
+?>\par
+\b\fs28 PSR 2 : Penutup\b0\fs22\par
+Penutupan HARUS dinyatakan dengan spasi setelah fungsi kunci, dan spasi sebelum dan setelah penggunaan kata kunci.\par
+Tanda kurung buka \b HARUS\b0  berada  pada baris yang sama, dan kurung pembuka harus berada pada baris berikutnya Body.\par
+\b TIDAK HARUS\b0  ada spasi setelah kurung buka dari daftar argumen atau daftar variabel, dan \b TIDAK HARUS \b0 ada spasi sebelum tanda kurung penutupan daftar argumen atau daftar variabel.\par
+Dalam daftar argumen dan daftar variabel, \b TIDAK HARUS\b0  ada spasi sebelum setiap koma, dan \b HARUS\b0  ada satu ruang setelah setiap koma.\par
+Penutupan argumen dengan nilai default \b HARUS\b0  berada pada akhir daftar argumen.\par
+daftar argumen dan daftar variabel \b MUNGKIN\b0  dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar \b HARUS\b0  di baris berikutnya, dan \b HARUS\b0  ada hanya satu argumen atau variabel per baris.\par
+\b contoh :\b0\par
+ <?php \par
+$foo -> bar ( $longArgument , $longerArgument , $muchLongerArgument );\par
+?> \par
+Saat daftar akhir (apakah argumen atau variabel) dibagi di beberapa baris, kurung tutup dan kurung pembuka \b HARUS\b0  ditempatkan bersama-sama pada jalur sendiri dengan satu ruang antara mereka. \par
+}
+ 

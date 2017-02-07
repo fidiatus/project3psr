@@ -1,0 +1,212 @@
+PSR 1 : Ikhtisar
+File hanya HARUS menggunakan  <? Php dan <tag? =.
+File HARUS menggunakan hanya UTF-8 tanpa BOM untuk kode PHP.
+File HARUS baik menyatakan simbol (kelas, fungsi, konstanta, dll) atau menyebabkan efek samping (misalnya menghasilkan output, mengubah pengaturan .ini, dll) tapi TIDAK HARUS melakukan keduanya.
+Ruang nama dan kelas HARUS mengikuti PSR-0.
+nama kelas HARUS dinyatakan di StudlyCaps.
+konstanta kelas HARUS dinyatakan dalam huruf besar semua dengan pemisah garis bawah.
+nama metode HARUS dinyatakan di CamelCase. 
+PSR 2 : Ikhtisar (Overview)
+Kode HARUS mengikuti PSR-1.
+Kode HARUS menggunakan 4 ruang untuk memasukkan, bukan label.
+TIDAK HARUS batas keras pada panjang garis; batas lembut HARUS 120 karakter; garis HARUS 80 karakter atau kurang.
+HARUS ada satu baris kosong setelah deklarasi namespace, dan HARUS ada satu baris kosong setelah blok penggunaan deklarasi.
+Tanda kurung membuka untuk Class HARUS berada pada baris berikutnya, dan kurung penutup  HARUS berada pada baris berikutnya setelah Body.
+Tanda kurung membuka untuk Method HARUS berada pada baris berikutnya, dan menutup kurung penutup HARUS pergi pada baris berikutnya setelah Body.
+Visibilitas HARUS dideklarasikan pada semua properti dan Method; abstrak dan akhir HARUS dideklarasikan sebelum visibilitas; statis HARUS dinyatakan setelah visibilitas.
+kata kunci struktur keywords HARUS memiliki satu ruang setelah mereka; Method dan fungsi panggilan TIDAK HARUS .
+Tanda kurung membuka untuk struktur kontrol HARUS ada pada baris yang sama, dan  kurung penutup HARUS ada pada baris berikutnya setelah tubuh.
+kurung pembuka untuk struktur kontrol TIDAK HARUS memiliki spasi setelah mereka, dan menutup kurung untuk struktur kontrol TIDAK HARUS memiliki spasi sebelum. 
+PSR 2 : Contol Structur
+HARUS ada satu spasi setelah kata kunci struktur pengendalian
+TIDAK HARUS ada spasi setelah kurung buka
+TIDAK HARUS ada spasi sebelum kurung tutup
+HARUS  ada satu ruang antara kurung tutup dan brace pembukaan
+Struktur Body HARUS menjorok sekali
+Kurung penutup HARUS berada di baris berikutnya setelah Body
+Tubuh setiap struktur HARUS tertutup oleh kurung penutup.
+Kata kunci elseif HARUS digunakan sebagai ganti dari else if.
+contoh :
+ <?php
+ if ( $expr1 ) { 
+// if body
+ } elseif ( $expr2 ) {
+ // elseif body 
+} else {
+ // else body;
+ } 
+Sebuah switch struktur terlihat seperti berikut ini. Perhatikan penempatan kurung, spasi, dan Kurung kurawal.  pernyataan case  HARUS menjorok sekali dari switch , dan break kata kunci (keyword atau terminating lainnya) HARUS menjorok pada tingkat yang sama dengan case Body. HARUS ada komentar seperti // no break ketika gagal disengaja dalam non-kosong case Body.
+Contoh :
+a. switch case
+<?php
+switch ($expr) {
+    case 0:
+        echo 'First case, with a break';
+        break;
+    case 1:
+        echo 'Second case, which falls through';
+        // no break
+    case 2:
+    case 3:
+    case 4:
+        echo 'Third case, return instead of break';
+        return;
+    default:
+        echo 'Default case';
+        break;
+}
+b. While, do while
+<?php
+while ($expr) {
+    // structure body
+}
+?>
+<?php
+do {
+    // structure body;
+} while ($expr);
+?>
+c.  For
+<?php
+for ($i = 0; $i < 10; $i++) {
+    // for body
+}
+d. Foreach
+<?php
+foreach ($iterable as $key => $value) {
+    // foreach body
+}
+?>
+e. try, catch
+<?php
+try {
+    // try body
+} catch (FirstExceptionType $e) {
+    // catch body
+} catch (OtherExceptionType $e) {
+    // catch body
+}
+?>
+Pernyataan(CASE) kasus HARUS menjorok sekali dari switch, dan BREAK (keyword atau terminating lainnya) HARUS menjorok pada tingkat yang sama seperti CASE kasus.
+Ada HARUS komentar seperti // tidak ada BREAK ketika jatuh-melalui disengaja dalam Body CASE non-kosong. 
+PSR 2 : General
+Kode HARUS mengikuti semua aturan yang digariskan dalam PSR-1.
+Semua file PHP HARUS menggunakan Unix LF (ganti baris) akhir baris.
+Semua file PHP HARUS diakhiri dengan satu baris kosong .
+Tag penutup ?> HARUS dihilangkan dari file yang hanya berisi PHP.
+TIDAK HARUS ada  batas  pada panjang garis.
+Batas lembut pada panjang garis HARUS 120 karakter; pemeriksa otomatis HARUS memperingatkan tapi TIDAK HARUS salah pada batas lembut.
+Garis TIDAK HARUS lebih dari 80 karakter; garis selanjutnya HARUS dibagi menjadi beberapa baris berikutnya agar tidak lebih dari 80 karakter masing-masing.
+TIDAK HARUS ada spasi di akhir baris non-kosong.
+baris kosong MUNGKIN ditambahkan untuk meningkatkan perhatian dan untuk menunjukkan blok terkait kode.
+TIDAK HARUS ada lebih dari satu pernyataan per baris.
+Kode HARUS menggunakan indent dari 4 ruang, dan TIDAK HARUS menggunakan tab untuk memasukkan.
+kata kunci PHP HARUS dalam huruf kecil.
+PHP konstanta benar, salah, dan nol HARUS dalam huruf kecil. 
+PSR 2 : Ruang Nama dan Penggunaan Dekarasi
+Ketika memulai, HARUS ada satu baris kosong setelah deklarasi namespace.
+Ketika memulai, semua deklarasi penggunaan HARUSada setelah deklarasi namespace.
+HARUS ada satu penggunaan kata kunci per deklarasi.
+HARUS ada satu baris kosong setelah blok digunakan. 
+Contoh :
+<?php 
+namespace Vendor\Package ; 
+use FooClass ; 
+use BarClass as Bar ; 
+use OtherVendor\OtherPackage\BazClass ; 
+// ... additional PHP code ... 
+?>
+PSR 2 : class,properties,metode
+Extends dan Implements HARUS dideklarasikan pada baris yang sama dengan nama Class.
+Tanda kurung pembuka untuk Class HARUS berada pada baris sendiri; kurung penutup untuk Class HARUS berada pada baris berikutnya setelah Body.
+contoh :
+<?php 
+namespace Vendor\Package ; 
+use FooClass ; 
+use BarClass as Bar ; 
+use OtherVendor\OtherPackage\BazClass ;
+ class ClassName extends ParentClass implements \ArrayAccess , \Countable {
+ // constants, properties, methods 
+}
+Daftar Implement MUNGKIN dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar HARUS di baris berikutnya, dan ada HARUS hanya satu Interface per baris.
+contoh :
+<?php 
+namespace Vendor\Package ; 
+use FooClass ; 
+use BarClass as Bar ; 
+use OtherVendor\OtherPackage\BazClass ; 
+class ClassName extends ParentClass implements \ArrayAccess , \Countable , \Serializable { 
+// constants, properties, methods
+ }
+Visibilitas HARUS dideklarasikan pada semua properti.
+Contoh Deklarasi properti :
+<?php 
+namespace Vendor\Package ; 
+class ClassName { 
+public $foo = null ; 
+} 
+kata kunci variabel TIDAK HARUS digunakan untuk menyatakan sebuah properti.
+TIDAK HARUS ada lebih dari satu properti dinyatakan per pernyataan.
+nama properti TIDAK BOLEH diawali dengan garis bawah untuk mengindikasikan dilindungi atau visibilitas pribadi, ex (_Program).
+Visibilitas HARUS dideklarasikan pada semua method.
+nama method TIDAK BOLEH diawali dengan satu garis bawah untuk mengindikasikan dilindungi atau visibilitas pribadi.
+nama method TIDAK HARUS dideklarasikan dengan spasi setelah nama method.
+Contoh :
+ <?php 
+namespace Vendor\Package ;
+ class ClassName { 
+public function fooBarBaz ( $arg1 , & $arg2 , $arg3 = []) {
+ // method body 
+}
+ } 
+Tanda kurung buka pada method HARUS berada pada baris tersendiri, dan kurung penutup HARUS berada pada baris berikutnya Body.
+TIDAK HARUS ada spasi setelah kurung buka dari metode, dan TIDAK HARUS ada spasi sebelum tanda kurung tutup.
+Dalam daftar argumen,  TIDAK HARUS ada spasi sebelum setiap koma, dan HARUS ada satu ruang setelah setiap koma.
+Contoh :
+<?php 
+namespace Vendor\Package ; 
+class ClassName {
+ public function foo ( $arg1 , & $arg2 , $arg3 = []) {
+ // method body 
+}
+}
+Metode argumen dengan nilai default HARUS ada pada akhir daftar argumen.
+daftar argumen MUNGKIN dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar HARUS di baris berikutnya, dan yang HARUS ada hanya satu argumen per baris.
+Ketika daftar argumen dibagi di beberapa baris, kurung tutup dan membuka brace harus ditempatkan bersama-sama pada jalur sendiri dengan satu ruang antara mereka.
+contoh :
+ <?php 
+namespace Vendor\Package ;
+ class ClassName { 
+public function aVeryLongMethodName ( ClassTypeHint $arg1 , & $arg2 , array $arg3 = [] ) { 
+// method body 
+}
+}
+Ketika memulai, deklarasi abstrak dan akhir harus mendahului deklarasi visibilitas.
+Ketika memulai, deklarasi statis HARUS datang setelah deklarasi visibilitas.
+contoh : 
+<?php 
+namespace Vendor\Package ; 
+abstract class ClassName { protected static $foo ; 
+abstract protected function zim (); final public static function bar () {
+ // method body 
+} 
+}
+Ketika membuat sebuah metode atau fungsi panggilan, TIDAK HARUS ada ruang antara method atau nama fungsi dan kurung buka, TIDAK HARUS ada spasi setelah kurung buka, dan TIDAK HARUS ada spasi sebelum tanda kurung tutup.
+Dalam daftar argumen,  TIDAK HARUS ada spasi sebelum setiap koma, dan HARUS ada satu ruang setelah setiap koma. 
+contoh : 
+ <?php 
+bar (); $foo -> bar ( $arg1 ); 
+Foo :: bar ( $arg2 , $arg3 ); 
+?>
+PSR 2 : Penutup
+Penutupan HARUS dinyatakan dengan spasi setelah fungsi kunci, dan spasi sebelum dan setelah penggunaan kata kunci.
+Tanda kurung buka HARUS berada  pada baris yang sama, dan kurung pembuka harus berada pada baris berikutnya Body.
+TIDAK HARUS ada spasi setelah kurung buka dari daftar argumen atau daftar variabel, dan TIDAK HARUS ada spasi sebelum tanda kurung penutupan daftar argumen atau daftar variabel.
+Dalam daftar argumen dan daftar variabel, TIDAK HARUS ada spasi sebelum setiap koma, dan HARUS ada satu ruang setelah setiap koma.
+Penutupan argumen dengan nilai default HARUS berada pada akhir daftar argumen.
+daftar argumen dan daftar variabel MUNGKIN dibagi di beberapa baris, di mana setiap baris berikutnya lebih menjorok sekali. Ketika melakukannya, item pertama dalam daftar HARUS di baris berikutnya, dan HARUS ada hanya satu argumen atau variabel per baris.
+contoh :
+ <?php 
+$foo -> bar ( $longArgument , $longerArgument , $muchLongerArgument );
+?> 
+Saat daftar akhir (apakah argumen atau variabel) dibagi di beberapa baris, kurung tutup dan kurung pembuka HARUS ditempatkan bersama-sama pada jalur sendiri dengan satu ruang antara mereka. 
